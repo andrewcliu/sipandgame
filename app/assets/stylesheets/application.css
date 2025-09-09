@@ -97,6 +97,32 @@ body{
 #jwalPage{
 	min-height: 100vh;
 }
+#jwal_row{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.jwal_img{
+
+	width:25%;
+	display:inline-block;
+	vertical-align: top;
+	img{
+		width:100%;
+	}
+}
+#jimg1{
+	transform: rotate(-15deg);
+	z-index: -9999;
+}
+#jimg2{
+	transform: rotate(18deg);
+	z-index: -9999;
+}
+#jmidimg{
+	z-index: 99999;
+	position:relative;
+}
 footer{
 	border-color:none!important;
 }
@@ -124,3 +150,4 @@ footer{
 	color:white!important;
 	border:none!important;
 }
+
