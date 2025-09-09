@@ -132,7 +132,7 @@ footer{
 	font-size:2.75rem;
 }
 
-.card-title, .subtitle{
+.card-title, .subtitle, .nav-link{
 		font-family: "Rubik Dirt", system-ui;
 }
 
