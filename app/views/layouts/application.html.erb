@@ -43,9 +43,6 @@
           
           <div class="text-center">
 
-            <a class="navbar-brand d-none d-lg-block" href="/">
-              <%= image_tag('logo.png', style:'width:125px;') %>
-            </a>
 
             <ul class="navbar-nav d-inline-flex">
               <li class="nav-item">
@@ -55,7 +52,7 @@
                 <%= link_to 'FOOD & BEVERAGE MENU', menu_path, class: "nav-link #{'active' if current_page?(menu_path)}" %>
               </li>
               <li class="nav-item">
-                <%= link_to 'TCG', just_win_and_loot_path, class: "nav-link #{'active' if current_page?(just_win_and_loot_path)}" %>
+                <%= link_to 'TCG EVENTS & CALENDAR', just_win_and_loot_path, class: "nav-link #{'active' if current_page?(just_win_and_loot_path)}" %>
               </li>
             </ul>
 
@@ -106,8 +103,10 @@
           <!-- Column 3: Contact -->
           <div class="col-md-4 mb-3">
             <h5 class='subtitle'>Contact</h5>
-            <p>Email: sipandgame.carmichael@gmail.com</p>
-            <p>Phone: (925) 880-5518</p>
+            <p><i class="fa-solid fa-envelope"></i>: sipandgame.carmichael@gmail.com
+              <br>
+              
+            <i class="fa-solid fa-phone"></i>: (925) 880-5518</p>
           </div>
         </div>
 

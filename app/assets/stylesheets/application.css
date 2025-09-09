@@ -31,6 +31,9 @@
 .notes{
 	color:#6FB447;
 }
+.navbar-nav .nav-link.active {
+  color: #6FB447 !important;
+}
 #header{
 	background-image:url('mvc.jpg');
 	background-position: center;
@@ -51,7 +54,11 @@
 }
 
 .navbar-custom{
-	background-color: #08010A!important;
+	background-color: #070125!important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* subtle bottom border */
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.2); /* soft shadow below */
+  z-index: 10; /* ensures it sits above other content */
+
 }
 body{
 	background-color:#08010A!important;
