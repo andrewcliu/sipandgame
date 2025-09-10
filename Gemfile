@@ -21,6 +21,7 @@ gem "jbuilder"
 gem 'font-awesome-sass', '~> 6.4.0'
 gem 'bootstrap', '~> 5.3.3'
 gem 'sassc-rails'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
