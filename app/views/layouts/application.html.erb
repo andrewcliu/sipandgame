@@ -4,6 +4,10 @@
     <title><%= content_for(:title) || "Sip & Game" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Sip & Game in Carmichael offers fruit teas, tabletop games, and a chill space to sip, play, and connect.">
+    <meta name="keywords" content="boba tea, card games, Carmichael, TCG events, fruit drinks, game cafe, console games, TCG">
+    <meta name="author" content="Sip & Game">
+    <meta name="robots" content="index, follow">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,15 +19,6 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -46,7 +41,7 @@
 
             <ul class="navbar-nav d-inline-flex">
               <li class="nav-item">
-                <%= link_to "<i class='fas fa-home'></i>".html_safe, root_path, class: "nav-link #{'active' if current_page?(root_path)}", 'aria-current': ('page' if current_page?(root_path)) %>
+                <%= link_to "HOME".html_safe, root_path, class: "nav-link #{'active' if current_page?(root_path)}", 'aria-current': ('page' if current_page?(root_path)) %>
               </li>
               <li class="nav-item">
                 <%= link_to 'FOOD & BEVERAGE MENU', menu_path, class: "nav-link #{'active' if current_page?(menu_path)}" %>
@@ -63,7 +58,7 @@
     </nav>
     <div id="header">
       <div>
-        <%= image_tag('logo.png', style:'width:80; ') %>
+        <%= image_tag('logo.png', alt:'sip and game logo') %>
         <% if params[:action] == 'menu' %>
           <h1 class='title'> FOOD & BEVERAGE <br> <span class='notes'> MENU </span></h1>
         <% elsif params[:action] == 'just_win_and_loot' %>
@@ -85,7 +80,7 @@
         <div class="row">
           <!-- Column 1: About -->
           <div class="col-md-4 mb-3">
-            <%= image_tag('logo.png', style:'width:125px;') %>
+            <%= image_tag('logo.png', alt:'sip and game logo') %>
             <p>Serving up fruit teas, games, and good vibes in Carmichael. Come play, sip, and chill.</p>
           </div>
 
@@ -111,8 +106,8 @@
         </div>
 
         <hr class="border-light">
-        <div class="text-center">
-          <small>© 2025 <%= image_tag('logo.png',style:'width:64px') %>. All rights reserved.</small>
+        <div class="text-center" id='subfooter'>
+          <small>© 2025 <%= image_tag('logo.png', alt:'sip and game logo') %>. All rights reserved.</small>
         </div>
       </div>
     </footer>
