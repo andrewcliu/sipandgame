@@ -10,10 +10,17 @@
 
       gtag('config', 'G-97WGCFJR9E');
     </script>
-    <title><%= content_for(:title) || "Sip & Game" %></title>
+    <title><%= content_for(:title) || "Sip and Game" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="description" content="Sip & Game in Carmichael offers fruit teas, tabletop games, and a chill space to sip, play, and connect.">
+
+    <% if params[:action] == 'just_win_and_loot' %>
+        <meta name="description" content="Just Win and Loot Games is a trading card game startup serving fans of Pokémon, Magic: The Gathering, and One Piece - offering community events, card trading, and sales.">
+    <% elsif params[:action] == 'menu' %>
+      <meta name="description" content="Sip & Game in Carmichael menu options tailored for our gamers.">
+    <% else %>
+      <meta name="description" content="Sip & Game in Carmichael offers fruit teas, tabletop games, and a chill space to sip, play, and connect.">
+    <% end %>
     <meta name="keywords" content="boba tea, card games, Carmichael, TCG events, fruit drinks, game cafe, console games, TCG">
     <meta name="author" content="Sip & Game">
     <meta name="robots" content="index, follow">
