@@ -36,10 +36,10 @@
           <td>Friday</td><td>5PM - 10:30PM*</td>
         </tr>
         <tr>
-          <td>Saturday</td><td>5PM - 10:30PM*</td>
+          <td>Saturday</td><td>11AM - 10:30PM*</td>
         </tr>
         <tr>
-          <td>Sunday</td><td>5PM - 10:30PM*</td>
+          <td>Sunday</td><td>11AM - 10:30PM*</td>
         </tr>
       </table>
       <i class='notes'>* Closing hours may shift depending on TCG event schedules.</i>
@@ -70,11 +70,30 @@
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
       events: [
-        { title: 'Meeting', start: '2025-09-10' },
-        { title: 'Deadline', start: '2025-09-15' }
+        {
+          title: 'Free Play Commander',
+          daysOfWeek: [3]
+        },
+        {
+          title: 'Thursday Night Modern',
+          daysOfWeek: [4]
+        },
+        {
+          title: 'Friday Night Magic',
+          daysOfWeek: [5]
+        },
+        {
+          title: 'Standard Showdown',
+          daysOfWeek: [6], // Saturday
+          startTime: '13:00'
+        },
+        {
+          title: 'Free Play Commander',
+          daysOfWeek: [0], // Sunday
+          startTime: '16:00'
+        }
       ]
     });
     calendar.render();
   });
 </script>
-
