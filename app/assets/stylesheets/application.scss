@@ -46,6 +46,19 @@
 	font-size:3.75rem;
 	color:white;
 }
+.fc-daygrid-event {
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: block !important;
+  padding-left: 5px;
+}
+
+/* Optional: make sure the title and time align nicely */
+.fc-event-title,
+.fc-event-time {
+  display: block;
+}
 
 .navbar-custom{
 	background-color: #070125!important;
