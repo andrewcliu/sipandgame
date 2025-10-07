@@ -82,16 +82,16 @@
     <div id="header">
       <div>
         <% if params[:action] == 'just_win_and_loot' %>
-          <%= image_tag('jwal_logo.png', alt:'sip and game logo') %>
+          <%= image_tag('jwal_logo2.png',{alt:'just win and loot game logo'}) %>
         <% else %>
-          <%= image_tag('logo.png', {alt:'sip and game logo', id:'jwalImg'}) %>
+          <%= image_tag('logo.png', alt:'sip and game logo') %>
         <% end %>
         
         <% if params[:action] == 'menu' %>
           <h1 class='title'> FOOD & BEVERAGE <br> <span class='notes'> MENU </span></h1>
         <% elsif params[:action] == 'just_win_and_loot' %>
           <h1 class="title">
-            JUST WIN & LOOT <br> <span class='notes'> GAMES </span>
+            BUY, SELL <br> <span class='notes'> TRADE </span>
           </h1>
         <% else %>
           <h1 class='title'>
