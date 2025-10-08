@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <% unless Rails.env.development? || Rails.env.test? %>
 
@@ -50,7 +50,7 @@
       <div class="container-fluid">
 
         <a class="navbar-brand d-lg-none" href="/">
-          <%= image_tag('logo.png', style:'width:125px;') %>
+          <%= image_tag('logo.png', {style:'width:125px;', alt:'sip and game logo'}) %>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
