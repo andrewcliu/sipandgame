@@ -39,7 +39,7 @@
           <td>Saturday</td><td>11AM - 10:30PM*</td>
         </tr>
         <tr>
-          <td>Sunday</td><td>11AM - 10:30PM*</td>
+          <td>Sunday</td><td>11AM - 9PM*</td>
         </tr>
       </table>
       <i class='notes'>* Closing hours may shift depending on TCG event schedules.</i>
@@ -72,7 +72,7 @@
       events: [
         {
           title: 'Free Play Commander',
-          daysOfWeek: [3]
+          daysOfWeek: [3,6]
         },
         {
           title: 'Thursday Night Modern',
@@ -84,13 +84,8 @@
         },
         {
           title: 'Standard Showdown',
-          daysOfWeek: [6], // Saturday
+          daysOfWeek: [0], // Saturday
           startTime: '13:00'
-        },
-        {
-          title: 'Free Play Commander',
-          daysOfWeek: [0], // Sunday
-          startTime: '16:00'
         }
       ]
     });
