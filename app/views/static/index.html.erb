@@ -4,7 +4,7 @@
 	
 	<h2 class="title text-center">WHAT WE HAVE IN-STORE</h2>
 	<div class='row'>
-		<div class='col-md-6'>
+		<div class='col-sm-12 col-md-4'>
 
 			<div class='mt-4'>
 				<div class="card">
@@ -19,11 +19,14 @@
 								<li><span class='important'>1 </span> Arcade</li>
 							</ol>
 
-							Gaming for customers only
+					
 				    </p>
 				  </div>
 				</div>
 			</div>
+
+		</div>
+		<div class='col-sm-12 col-md-4'>
 			<div class=' mt-4'>
 				<div class="card">
 				  <%= image_tag('board_games.jpg', {class:'card-img-top', alt:'board games'}) %>
@@ -33,30 +36,31 @@
 				</div>
 			</div>
 
-		</div>
-		<div class='col-md-6'>
-
 			<div class=' mt-4'>
 				<div class="card">
 				  <%= image_tag('pokemon.jpg', {class:'card-img-top', alt:'pokemon pikachu image'}) %>
 				  <div class="card-body">
-				    <h3 class="card-title">TCG - Just Win & Loot Games</h3>
+				    <h3 class="card-title">TCG: Just Win & Loot Games</h3>
 				    <p class="card-text">Pokemon, Magic, and One Piece TCG. Hosting events weekly!</p>
 				    <%= link_to 'Event calendar & more info', just_win_and_loot_path, class:'btn btn-danger' %>
 				  </div>
 				</div>
 			</div>
-
+		</div>
+		<div class='col-sm-12 col-md-4'>
 			<div class=' mt-4'>
 				<div class="card">
-				  <%= image_tag('fresh_fruit.jpg', {class:'card-img-top', alt:'korea fresh fruit selection'}) %>
+				  <%= image_tag('boba.jpg', {class:'card-img-top', alt:'korea fresh fruit selection'}) %>
 				  <div class="card-body">
-				    <h3 class="card-title">Food & Drinks</h3>
+				    <h3 class="card-title">Boba Tea & More</h3>
 				    <%= link_to 'Check out menu', menu_path, class:'btn btn-danger' %>
 		
 				  </div>
 				</div>
 			</div>
+		</div>
+		<div class='col-sm-12 col-md-4'>
+
 		</div>
 
 	</div>
