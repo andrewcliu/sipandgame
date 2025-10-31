@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
 <div id="content">
 
@@ -59,11 +61,9 @@
 				</div>
 			</div>
 		</div>
-		<div class='col-sm-12 col-md-4'>
-
-		</div>
 
 	</div>
+
 <div id="init" class='mt-4'>
 	<h2 class="title text-center">COME ON IN!</h2>
 
@@ -71,11 +71,11 @@
 
 	<div class='row'>
 
-		<div class='col-md-8'>
-			<%= image_tag('main.jpg', alt:'image of Sip and Game store') %>
+		<div class='col-md-9'>
+			 	<div id="calendar"></div>
 
 		</div>
-		<div class='col-md-4'>
+		<div class='col-md-3'>
 			<p>
 			Welcome to our gaming lounge and café, located at 6428 Fair Oaks Blvd, Suite A, in Carmichael. Dive into console gaming on five immersive 50-inch TVs, challenge your reflexes on retro arcade machines, or gather around for classic board games.
 			</p>
@@ -99,7 +99,7 @@
 
 </div>
 
-<div class='row' id='gallery'>
+<div class='row mt-4' id='gallery'>
 	<% Dir.glob(Rails.root.join("app/assets/images/gallery/*")).each do |image_path| %>
 	  <div class='col-sm-12 col-md-4 mt-4'><%= image_tag "gallery/#{File.basename(image_path)}" %></div>
 	<% end %>
@@ -111,3 +111,52 @@
 
 
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: [
+        {
+          title: 'Free Play Commander',
+          daysOfWeek: [3,6]
+        },
+        {
+          title: 'Thursday Night Modern',
+          daysOfWeek: [4]
+        },
+        {
+          title: 'Friday Night Magic',
+          daysOfWeek: [5]
+        },
+
+        {
+          title: 'Standard Showdown',
+          daysOfWeek: [0], // Saturday
+          startTime: '13:00'
+        },
+			  {
+			    title: 'Secret Stash & PokestorePGN Event',
+			    start: '2025-11-05T14:00:00', // Specific date and time
+			    end: '2025-11-05T20:00:00'    // Optional end time
+			  },
+			  {
+			    title: 'Secret Stash & PokestorePGN Event',
+			    start: '2025-11-06T14:00:00', // Specific date and time
+			    end: '2025-11-06T20:00:00'    // Optional end time
+			  },
+			  {
+			    title: "Kids' TCG Event",
+			    start: '2025-11-09T12:00:00', // Specific date and time
+			    end: '2025-11-09T16:00:00'    // Optional end time
+			  }
+      ]
+    });
+    calendar.render();
+  });
+</script>
