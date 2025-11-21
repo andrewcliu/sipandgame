@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root 'static#index'
   get 'menu' => 'static#menu'
   get '/sitemap.xml', to: 'sitemaps#index', defaults: { format: 'xml' }
-  get 'just_win_and_loot' => 'static#just_win_and_loot'
+  # get 'just_win_and_loot' => 'static#just_win_and_loot'
 
 end
