@@ -13,19 +13,21 @@
         gtag('config', 'G-97WGCFJR9E');
       </script>
     <% end %>
-    <title><%= content_for(:title) || "Sip and Game" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    
 
   
     <% if params[:action] == 'menu' %>
+      <title><%= content_for(:title) || "Sip and Game Boba Tea" %></title>
       <meta name="description" content="Sip & Game in Carmichael menu options tailored for our gamers.">
       <meta name="keywords" content="boba tea, card games, Carmichael, TCG events, fruit drinks, game cafe, console games, TCG near me, Pokemon tcg near me, Magic near me">
 
     <% else %>
+      <title><%= content_for(:title) || "Sip and Game" %></title>
       <meta name="description" content="Sip & Game in Carmichael offers boba tea, tabletop games, and a chill space to sip, play, and connect.">
       <meta name="keywords" content="boba tea, card games, Carmichael, TCG events, fruit drinks, game cafe, console games, TCG near me, Pokemon tcg near me, Magic near me">
     <% end %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <meta name="author" content="Sip and Game">
     <meta name="robots" content="index, follow">
