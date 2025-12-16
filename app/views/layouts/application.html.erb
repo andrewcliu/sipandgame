@@ -16,13 +16,20 @@
     
 
   
-    <% if params[:action] == 'menu' %>
+    <% if params[:action] == 'boba_tea_menu' %>
       <title><%= content_for(:title) || "Sip and Game Boba Tea" %></title>
       <meta name="description" content="Sip & Game in Carmichael menu options tailored for our gamers.">
       <meta name="keywords" content="boba tea, card games, Carmichael, TCG events, fruit drinks, game cafe, console games, TCG near me, Pokemon tcg near me, Magic near me">
-
+    <% elsif params[:action] == 'gallery' %>
+      <title><%= content_for(:title) || "Sip and Game Gallery" %></title>
+      <meta name="description" content="Explore Sip & Game’s gallery — showcasing our gaming lounge, TCG events, boba creations, and community moments in Carmichael.">
+      <meta name="keywords" content="Sip and Game gallery, Carmichael gaming cafe, boba drinks photos, card shop events, TCG tournaments Sacramento, Magic Commander nights, Pokemon TCG events, gaming lounge pictures, community card shows, Sacramento game cafe">
+    <% elsif params[:action] == 'all_about_sip' %>
+      <title><%= content_for(:title) || "All About Sip and Game" %></title>
+      <meta name="description" content="Learn about Sip & Game — a community-driven gaming lounge and café in Carmichael. We bring together trading card games, console play, and boba drinks with weekly events, tournaments, and card shows.">
+      <meta name="keywords" content="Sip and Game Carmichael, about Sip and Game, gaming café Sacramento, community card shop, TCG events Carmichael, Magic Commander Sacramento, Pokemon TCG Sacramento, boba and gaming lounge, Sacramento card shows, gaming community café">
     <% else %>
-      <title><%= content_for(:title) || "Sip and Game" %></title>
+      <title><%= content_for(:title) || "Sip and Game TCG & Boba" %></title>
       <meta name="description" content="Sip & Game in Carmichael offers boba tea, tabletop games, and a chill space to sip, play, and connect.">
       <meta name="keywords" content="boba tea, card games, Carmichael, TCG events, fruit drinks, game cafe, console games, TCG near me, Pokemon tcg near me, Magic near me">
     <% end %>
@@ -72,7 +79,7 @@
               </li>
               <% end %>
               <li class="nav-item">
-                <%= link_to 'FOOD & BEVERAGE MENU', menu_path, class: "nav-link #{'active' if current_page?(menu_path)}" %>
+                <%= link_to 'FOOD & BEVERAGE MENU', boba_tea_menu_path, class: "nav-link #{'active' if current_page?(boba_tea_menu_path)}" %>
               </li>
               <li class="nav-item">
                 <%= link_to 'GALLERY', gallery_path, class: "nav-link #{'active' if current_page?(gallery_path)}" %>
@@ -95,7 +102,7 @@
           <%= image_tag('logo.png', alt:'sip and game logo') %>
         <% end %>
         
-        <% if params[:action] == 'menu' %>
+        <% if params[:action] == 'boba_tea_menu' %>
           <h1 class='title'> FOOD & BEVERAGE <br> <span class='notes'> MENU </span></h1>
         <% elsif params[:action] == 'gallery' %>
           <h1 class="title">
@@ -152,7 +159,7 @@
             <h5 class='subtitle'>Quick links</h5>
             <ul class="list-unstyled">
               <li><a href="/" class="text-white text-decoration-none">Home</a></li>
-              <li><a href="/menu" class="text-white text-decoration-none">Food & Beverage Menu</a></li>
+              <li><a href="/boba_tea_menu" class="text-white text-decoration-none">Food & Beverage Menu</a></li>
            
               <li><a href="/all_about_sip" class="text-white text-decoration-none">About S&G</a></li>
             </ul>

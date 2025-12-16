@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
 
   root 'static#index'
-  get 'menu' => 'static#menu'
+  get 'boba_tea_menu' => 'static#boba_tea_menu'
   get '/sitemap.xml', to: 'sitemaps#index', defaults: { format: 'xml' }
   get 'gallery' => 'static#gallery'
   get 'all_about_sip' => 'static#all_about_sip'

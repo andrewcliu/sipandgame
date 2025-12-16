@@ -2,7 +2,7 @@ class StaticController < ApplicationController
 	def index 
 	end
 
-	def menu 
+	def boba_tea_menu 
 	end
 
 	def gallery 
