@@ -22,6 +22,11 @@
 .navbar-nav .nav-link.active {
   color: #6FB447 !important;
 }
+#gallery{
+	img{
+		width:100%;
+	}
+}
 #header{
 	background-image:url('mvc.jpg');
 	background-position: center;

@@ -5,6 +5,9 @@ class StaticController < ApplicationController
 	def menu 
 	end
 
-	def just_win_and_loot 
+	def gallery 
+	end
+
+	def all_about_sip
 	end
 end

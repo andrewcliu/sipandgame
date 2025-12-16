@@ -3,10 +3,37 @@
 
 <div id="content">
 
-	
+	<h2 class="title text-center">COMMUNITY DRIVEN</h2>
+	<div class="row">
+		<div class='col-md-6'>
+			<%= image_tag('tekken_tourney.jpg', style:'width:100%;border-radius:5px;') %>
+		</div>
+		<div class='col-md-6'>
+			<p>Welcome to Sip and Game where gaming, trading cards (Pokemon, MTG & more), and boba all come together in one vibrant space. Dive into the action on our five 50-inch TVs, test your reflexes in spontaneous tournaments, connect with the community, or settle in for a round of Magic: Commander.</p>
+
+			<p>We aim to be community-driven lounge hosting weekly events, tournaments, and card shows designed to bring players and collectors together. Whether you’re here to recharge, meet new friends, enjoy a refreshing boba, or simply relax, Sip and Game is your spot.</p>
+			<p>We can’t wait to welcome you!</p>
+			<p>
+				For up to date info on our events please follow us on our <%= link_to 'Instagram', 'https://www.instagram.com/sipandgame/' %>!
+			</p>
+			<br>
+			<h3 class="subtitle">Business info</h3>
+			<p>
+				<i class="fa-solid fa-envelope"></i>: sipandgame.carmichael@gmail.com
+			</p>
+			<p>
+				<i class="fa-solid fa-address-card"></i>: <%= link_to '6428-A Fair Oaks Blvd, Carmichael CA', 'https://maps.app.goo.gl/BaWVzErfDVHbo6jJ8' %>
+			</p>
+			<p>
+				<i class="fa-solid fa-phone"></i>: (916) 545-4038
+			</p>
+		</div>
+	</div>
+	<br>
+	<br>
 	<h2 class="title text-center">WHAT WE HAVE IN-STORE</h2>
 	<div class='row'>
-		<div class='col-sm-12 col-md-4'>
+		<div class='col-sm-12 col-md-5'>
 
 			<div class='mt-4'>
 				<div class="card">
@@ -28,7 +55,7 @@
 			</div>
 
 		</div>
-		<div class='col-sm-12 col-md-4'>
+		<div class='col-sm-12 col-md-3'>
 			<div class=' mt-4'>
 				<div class="card">
 				  <%= image_tag('board_games.jpg', {class:'card-img-top', alt:'board games'}) %>
@@ -71,39 +98,15 @@
 
 	<div class='row'>
 
-		<div class='col-md-9'>
+		<div class='col-md-12'>
 			 	<div id="calendar"></div>
 
 		</div>
-		<div class='col-md-3'>
-			<p>
-			Welcome to our gaming lounge and café, located at 6428 Fair Oaks Blvd, Suite A, in Carmichael. Dive into console gaming on five immersive 50-inch TVs, challenge your reflexes on retro arcade machines, or gather around for classic board games.
-			</p>
-			<p>
-			We also host trading card play featuring Pokémon and Magic: The Gathering. We buy, sell, and trade!
-			</p>
-			<p>
-			And when it’s time to recharge, our in-house café offers fruit teas, tonics, punches, and snacks—perfect for keeping you and your crew fueled while you play, relax, and connect.
-			</p>
-			<br>
-			<h3 class="subtitle">Business info</h3>
-			<p>
-				<i class="fa-solid fa-envelope"></i>: sipandgame.carmichael@gmail.com
-			</p>
-			<p>
-				<i class="fa-solid fa-address-card"></i>: 6428-A Fair Oaks Blvd, Carmichael CA
-			</p>
 
-		</div>
 	</div>
 
 </div>
 
-<div class='row mt-4' id='gallery'>
-	<% Dir.glob(Rails.root.join("app/assets/images/gallery/*")).each do |image_path| %>
-	  <div class='col-sm-12 col-md-4 mt-4'><%= image_tag "gallery/#{File.basename(image_path)}" %></div>
-	<% end %>
-</div>
 
 </div>
 
@@ -145,36 +148,12 @@
           daysOfWeek: [0], // Saturday
           startTime: '13:00'
         },
-			  {
-			    title: 'Secret Stash & PokestorePGN Event',
-			    start: '2025-11-05T14:00:00', // Specific date and time
-			    end: '2025-11-05T20:00:00'    // Optional end time
-			  },
-			  {
-			    title: 'Secret Stash & PokestorePGN Event',
-			    start: '2025-11-06T14:00:00', // Specific date and time
-			    end: '2025-11-06T20:00:00'    // Optional end time
-			  },
+
 			  
         {
-          title: 'NorCal Beyblade',
-			    start: '2025-11-21T19:00:00', // Specific date and time
-			    end: '2025-11-13T22:00:00'    // Optional end time
-        },
-        {
-          title: 'Chill Game Night',
-			    start: '2025-11-22T18:00:00'
-        },
-        {
-          title: 'Tekken 8 First Meet',
-			    start: '2025-11-14T17:00:00', // Specific date and time
-			    end: '2025-11-14T22:00:00'    // Optional end time
-        },
-        {
-          title: 'Turkey Potluck',
-			    start: '2025-11-26T17:00:00', // Specific date and time
-			    end: '2025-11-26T22:30:00'    // Optional end time
-        },
+          title: 'Card Show @ 6432 Fair Oaks Blvd',
+			    start: '2025-12-21T10:00:00'
+        }
       ]
     });
     calendar.render();
