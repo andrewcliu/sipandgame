@@ -87,14 +87,14 @@
               <li class="nav-item">
                 <%= link_to 'ABOUT S&G', all_about_sip_path, class: "nav-link #{'active' if current_page?(all_about_sip_path)}" %>
               </li>
-              <li class="nav-item">
-                <% if signed_in? %>
-                  Signed in as: <%= current_user.email %>
-                  <%= button_to 'Sign out', sign_out_path, method: :delete %>
-                <% else %>
-                  <%= link_to 'Sign in', sign_in_path %>
-                <% end %>
-              </li>
+              <%# <li class="nav-item"> %>
+                <%# if signed_in? %>
+                   <%#= current_user.email %>
+                  <%#= button_to 'Sign out', sign_out_path, method: :delete %>
+                <%# else %>
+                  <%#= link_to 'Sign in', sign_in_path %>
+                <%# end %>
+              <%# </li> %>
             </ul>
 
           </div>
