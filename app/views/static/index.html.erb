@@ -1,5 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
 
 <div id="content">
 
@@ -98,9 +97,13 @@
 
 	<div class='row'>
 
-		<div class='col-md-12'>
-			 	<div id="calendar"></div>
-
+		<div class='col-md-6 col-sm-12'>
+			 	
+			<%= image_tag('january_cal.png') %>
+		</div>
+		<div class='col-md-6 col-sm-12'>
+			 	
+			<%= image_tag('reoccuring_cal.png') %>
 		</div>
 
 	</div>
@@ -114,48 +117,3 @@
 
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const calendarEl = document.getElementById('calendar');
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      events: [
-        {
-          title: 'Free Play Commander',
-          daysOfWeek: [3,6]
-        },
-        {
-          title: 'Thursday Night Modern',
-          daysOfWeek: [4]
-        },
-        {
-          title: 'NorCal Beyblade',
-          daysOfWeek: [4],
-          startTime: '19:00'
-        },
-        {
-          title: 'Friday Night Magic',
-          daysOfWeek: [5]
-        },
-
-        {
-          title: 'Standard Showdown',
-          daysOfWeek: [0], // Saturday
-          startTime: '13:00'
-        },
-
-			  
-        {
-          title: 'Card Show @ 6432 Fair Oaks Blvd',
-			    start: '2025-12-21T10:00:00'
-        }
-      ]
-    });
-    calendar.render();
-  });
-</script>
