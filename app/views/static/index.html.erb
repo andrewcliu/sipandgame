@@ -1,5 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
 
 <div id="content">
 
@@ -45,7 +44,7 @@
 							<ol>
 								<li><span class='important'>2 </span> Xbox Series S with Game Pass </li>
 								<li><span class='important'>2 </span> PlayStation 5 with PS Plus Premium</li>
-								<li><span class='important'>1 </span> Arcade</li>
+								<li><span class='important'>1 </span> Nintendo Switch</li>
 							</ol>
 
 					
@@ -71,7 +70,7 @@
 				  <div class="card-body">
 				    <h3 class="card-title">TCG</h3>
 				    <p class="card-text">Pokemon and Magic The Gathering. Hosting events weekly!</p>
-		
+						<%= link_to 'Check out TCG', 'https://www.sipandgametcg.com', class:'btn btn-danger' %>
 				  </div>
 				</div>
 			</div>
@@ -91,24 +90,24 @@
 
 	</div>
 
-<div id="init" class='mt-4'>
-	<h2 class="title text-center">EVENT CALENDAR</h2>
+	<div id="init" class='mt-4'>
+		<h2 class="title text-center">EVENT CALENDAR</h2>
 
-	<br>
+		<br>
 
-	<div class='row'>
+		<div class='row'>
 
-		<div class='col-md-6 col-sm-12' id='calendar'>
-			 	
-			<%= image_tag('january_cal.png') %>
+			<div class='col-md-6 col-sm-12' id='calendar'>
+				 	
+				<%= image_tag('january_cal.png') %>
+			</div>
+			<div class='col-md-6 col-sm-12'>
+				 	
+				<%= image_tag('reoccuring_cal.png') %>
+			</div>
+
 		</div>
-		<div class='col-md-6 col-sm-12'>
-			 	
-			<%= image_tag('reoccuring_cal.png') %>
-		</div>
-
 	</div>
-</div>
 
 
 </div>
