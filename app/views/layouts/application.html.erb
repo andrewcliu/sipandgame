@@ -106,11 +106,9 @@
     </nav>
     <div id="header">
       <div>
-        <% if params[:action] == 'just_win_and_loot' %>
-          <%= image_tag('jwal_logo2.png',{alt:'just win and loot game logo'}) %>
-        <% else %>
-          <%= image_tag('logo.png', alt:'sip and game logo') %>
-        <% end %>
+  
+        <%= image_tag('logo.png', alt:'sip and game logo') %>
+   
         
         <% if params[:action] == 'boba_tea_menu' %>
           <h1 class='title'> FOOD & BEVERAGE <br> <span class='notes'> MENU </span></h1>
