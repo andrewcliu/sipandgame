@@ -78,7 +78,7 @@
               </li>
               <% end %>
               <li class="nav-item">
-                <%= link_to 'FOOD & BEVERAGE MENU', boba_tea_menu_path, class: "nav-link #{'active' if current_page?(boba_tea_menu_path)}" %>
+                <%= link_to 'BOBA TEA MENU', boba_tea_menu_path, class: "nav-link #{'active' if current_page?(boba_tea_menu_path)}" %>
               </li>
               <li class="nav-item">
                 <%= link_to 'GALLERY', gallery_path, class: "nav-link #{'active' if current_page?(gallery_path)}" %>
@@ -171,7 +171,7 @@
             <h5 class='subtitle'>Quick links</h5>
             <ul class="list-unstyled">
               <li><a href="/" class="text-white text-decoration-none">Home</a></li>
-              <li><a href="/boba_tea_menu" class="text-white text-decoration-none">Food & Beverage Menu</a></li>
+              <li><a href="/boba_tea_menu" class="text-white text-decoration-none">Boba Tea Menu</a></li>
            
               <li><a href="/all_about_sip" class="text-white text-decoration-none">About S&G</a></li>
             </ul>
@@ -193,6 +193,7 @@
               <a href="https://www.facebook.com/profile.php?id=61581559299903" target="_blank" rel="noopener">
                 <i class="fab fa-facebook"></i>
               </a>
+              <%= link_to "<i class='fa-brands fa-discord'></i>".html_safe, 'https://discord.com/channels/1446706387647201355/1446706388477939733', {'target':"_blank", 'rel':"noopener"} %>
             </footer>
             <h5 class="subtitle mt-4">Business info</h5>
             <p>

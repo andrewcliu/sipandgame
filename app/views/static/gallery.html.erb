@@ -1,10 +1,31 @@
-<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<% image_cdns = ['https://sipandgame.b-cdn.net/beyblade_night.jpg',
+'https://sipandgame.b-cdn.net/first_card_show_carmichael.jpg',
+'https://sipandgame.b-cdn.net/stream_team_in_card_show.jpg',
+'https://sipandgame.b-cdn.net/commander_night.jpg',
+'https://sipandgame.b-cdn.net/customer_purchasing_pokemon.jpg',
+'https://sipandgame.b-cdn.net/customers_and_pokemon.jpg',
+'https://sipandgame.b-cdn.net/first_customer.jpg',
+'https://sipandgame.b-cdn.net/kids_pokemon_trade.jpg',
+'https://sipandgame.b-cdn.net/magic_commander.jpg',
+'https://sipandgame.b-cdn.net/magic_the_gathering.jpg',
+'https://sipandgame.b-cdn.net/pokemon_etb.jpeg',
+'https://sipandgame.b-cdn.net/super_smash_bro_tourney.jpg',
+'https://sipandgame.b-cdn.net/tcg2.jpg',
+'https://sipandgame.b-cdn.net/tekken_meet.jpg',
+'https://sipandgame.b-cdn.net/tekken_tourney_wide_view.jpg',
+'https://sipandgame.b-cdn.net/tekken_tourney.jpg',
+'https://sipandgame.b-cdn.net/tgc_items.jpg',
+'https://sipandgame.b-cdn.net/trade_night.jpg',
+'https://sipandgame.b-cdn.net/tekken_winner.jpg',
+'https://sipandgame.b-cdn.net/commander_day.jpg',
+'https://sipandgame.b-cdn.net/art_fof_chau.jpg',
+'https://sipandgame.b-cdn.net/customers_pokemon.jpg',
+'https://sipandgame.b-cdn.net/street_fighter_tourney_winners.jpg'] %>
 
 <div id='gallery'>
   <div class='row'>
-  <% Dir.glob(Rails.root.join("app/assets/images/gallery/*")).each do |image_path| %>
-    <div class='col-sm-12 col-md-4 mt-4'><%= image_tag "gallery/#{File.basename(image_path)}" %></div>
+  <% image_cdns.each do |img| %>
+    <div class='col-sm-12 col-md-4 mt-4'><%= image_tag img %></div>
   <% end %>
   </div>
 </div>

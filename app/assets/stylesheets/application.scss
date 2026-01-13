@@ -1,7 +1,33 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+image {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
 
+#init_content{
+	.fab, .fa-brands{
+		font-size:50px;
+	}
+	.fa-brands{
+		color:#5865F2;
+	}
+	.fab{
+		margin-left:1rem;
+	  background: linear-gradient(
+	    45deg,
+	    #feda75 0%,
+	    #fa7e1e 25%,
+	    #d62976 50%,
+	    #962fbf 75%,
+	    #4f5bd5 100%
+	  );
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+
+
+	}
+}
 @media (max-width: 768px) {
 	#header img{
 		width:60%;
@@ -27,6 +53,7 @@
 		width:100%;
 	}
 }
+
 #header{
 	background-image:url('mvc.jpg');
 	background-position: center;

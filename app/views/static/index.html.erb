@@ -3,19 +3,15 @@
 <div id="content">
 
 	<h2 class="title text-center">COMMUNITY DRIVEN</h2>
-	<div class="row">
+	<div class="row" id='init_content'>
 		<div class='col-md-6'>
-			<%= image_tag('tekken_tourney.jpg', style:'width:100%;border-radius:5px;') %>
+			<%= image_tag 'https://sipandgame.b-cdn.net/store_brand_night.jpg'  %>
 		</div>
 		<div class='col-md-6'>
+			<h3 class="subtitle">Welcome!</h3>
 			<p>Welcome to Sip and Game where gaming, trading cards (Pokemon, MTG & more), and boba all come together in one vibrant space. Dive into the action on our five 50-inch TVs, test your reflexes in spontaneous tournaments, connect with the community, or settle in for a round of Magic: Commander.</p>
 
-			<p>We aim to be community-driven lounge hosting weekly events, tournaments, and card shows designed to bring players and collectors together. Whether you’re here to recharge, meet new friends, enjoy a refreshing boba, or simply relax, Sip and Game is your spot.</p>
-			<p>We can’t wait to welcome you!</p>
-			<p>
-				For up to date info on our events please follow us on our <%= link_to 'Instagram', 'https://www.instagram.com/sipandgame/' %>!
-			</p>
-			<br>
+			<p>We aim to be community-driven lounge hosting weekly events, tournaments, and <u>card shows</u> designed to bring players and collectors together. Whether you’re here to recharge, meet new friends, enjoy a refreshing bubble tea, or simply relax, S&G is your spot.</p>
 			<h3 class="subtitle">Business info</h3>
 			<p>
 				<i class="fa-solid fa-envelope"></i>: sipandgame.carmichael@gmail.com
@@ -26,70 +22,24 @@
 			<p>
 				<i class="fa-solid fa-phone"></i>: (916) 545-4038
 			</p>
+			<%= link_to "<i class='fa-brands fa-discord'></i>".html_safe, 'https://discord.com/channels/1446706387647201355/1446706388477939733'%>
+			<%= link_to "<i class='fab fa-instagram'></i>".html_safe, 'https://www.instagram.com/sipandgame/'%>
+
 		</div>
 	</div>
 	<br>
 	<br>
-	<h2 class="title text-center">WHAT WE HAVE IN-STORE</h2>
+	<h2 class="title text-center">WHAT'S IN-HOUSE?</h2>
 	<div class='row'>
-		<div class='col-sm-12 col-md-5'>
-
-			<div class='mt-4'>
-				<div class="card">
-					<%= image_tag('console.jpg', {class:'card-img-top', alt:'xbox one and playstation 5'}) %>
-
-				  <div class="card-body">
-				    <h3 class="card-title">Console Games</h3>
-				    <p class="card-text">
-							<ol>
-								<li><span class='important'>2 </span> Xbox Series S with Game Pass </li>
-								<li><span class='important'>2 </span> PlayStation 5 with PS Plus Premium</li>
-								<li><span class='important'>1 </span> Nintendo Switch</li>
-							</ol>
-
-					
-				    </p>
-				  </div>
-				</div>
-			</div>
-
-		</div>
-		<div class='col-sm-12 col-md-3'>
-			<div class=' mt-4'>
-				<div class="card">
-				  <%= image_tag('board_games.jpg', {class:'card-img-top', alt:'board games'}) %>
-				  <div class="card-body">
-				    <h3 class="card-title">Board Games</h3>
-				  </div>
-				</div>
-			</div>
-
-			<div class=' mt-4'>
-				<div class="card">
-				  <%= image_tag('pokemon.jpg', {class:'card-img-top', alt:'pokemon pikachu image'}) %>
-				  <div class="card-body">
-				    <h3 class="card-title">TCG</h3>
-				    <p class="card-text">Pokemon and Magic The Gathering. Hosting events weekly!</p>
-						<%= link_to 'Check out TCG', 'https://www.sipandgametcg.com', class:'btn btn-danger' %>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class='col-sm-12 col-md-4'>
-			<div class=' mt-4'>
-				<div class="card">
-				  <%= image_tag('boba.jpg', {class:'card-img-top', alt:'korea fresh fruit selection'}) %>
-				  <div class="card-body">
-				    <h3 class="card-title">Boba Tea & More</h3>
-				    <%= link_to 'Check out menu', boba_tea_menu_path, class:'btn btn-danger' %>
-		
-				  </div>
-				</div>
-			</div>
+		<div class='col-sm-12'>
+			<%= image_tag 'https://sipandgame.b-cdn.net/in_store_tcg.png' %> 
+			<br><br>
+			<%= image_tag 'https://sipandgame.b-cdn.net/tourney_games.png' %>
 		</div>
 
 	</div>
-
+	<br>
+	<br>
 	<div id="init" class='mt-4'>
 		<h2 class="title text-center">EVENT CALENDAR</h2>
 
@@ -116,9 +66,3 @@
 
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const calendarEl = document.getElementById('calendar');
-  
-  });
-</script>
