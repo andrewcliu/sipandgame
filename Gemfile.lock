@@ -358,7 +358,7 @@ DEPENDENCIES
   capybara
   clearance
   debug
-  error_highlight (>= 0.4.0)
+  error_highlight (>= 0.6.0)
   font-awesome-sass (~> 6.4.0)
   importmap-rails
   jbuilder
