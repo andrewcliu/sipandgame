@@ -18,9 +18,9 @@ gem "importmap-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
-gem 'font-awesome-sass', '~> 6.4.0'
-gem 'bootstrap', '~> 5.3.3'
-gem 'sassc-rails'
+gem "font-awesome-sass", "~> 6.4.0"
+gem "bootstrap", "~> 5.3.8"
+gem "sassc-rails"
 gem "clearance"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -42,7 +42,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem "brakeman", require: false
+  gem "brakeman", "7.0.0", require: false
+
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -53,7 +54,6 @@ group :development do
   gem "web-console"
 
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
-  gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 end
 
 group :test do
