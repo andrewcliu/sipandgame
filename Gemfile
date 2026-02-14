@@ -60,4 +60,3 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "error_highlight", "0.6.0"
