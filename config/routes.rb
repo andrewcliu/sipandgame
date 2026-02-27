@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "gallery" => "static#gallery"
   get "all_about_sip" => "static#all_about_sip"
   get "dashboard_home" => "dashboard#index"
+  get "/events", to: "events#index"
+  get "/events_feed", to: "events#feed"
 
   resources :passwords, controller: "clearance/passwords", only: [ :create, :new ]
   resource :session, controller: "clearance/sessions", only: [ :create ]
@@ -13,3 +15,4 @@ Rails.application.routes.draw do
     resource :password, controller: "clearance/passwords", only: [ :edit, :update ]
   end
 end
+  
