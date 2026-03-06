@@ -98,13 +98,12 @@
 
 	<div class='row'>
 
-		<div class='col-md-6 col-sm-12' id='calendar'>
+		<div class='col-md-6 col-sm-12'>
 			 	
 			<%= image_tag('VCSCardshow.jpg') %>
 		</div>
-		<div class='col-md-6 col-sm-12'>
-			 	
-			<%= image_tag('reoccuring_cal.png') %>
+		<div class='col-md-6 col-sm-12' id="calendar">
+			
 		</div>
 
 	</div>
@@ -117,9 +116,20 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const calendarEl = document.getElementById('calendar');
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    const calendarEl = document.getElementById("calendar");
+    if (!calendarEl) return;
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: "dayGridMonth",
+      height: "auto",
+      events: "/events_feed"
+    });
+
+    calendar.render();
   });
 </script>
