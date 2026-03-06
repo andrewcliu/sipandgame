@@ -198,3 +198,237 @@ footer{
 	border:none!important;
 }
 
+/* Layout */
+.event-calendar-row{
+  row-gap: 18px;
+}
+
+.vcs-image-card{
+  width: 100%;
+  background: #fff;
+  border: 3px solid #e00022;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+}
+
+.vcs-image{
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+}
+
+@media (max-width: 991px){
+  .vcs-image{
+    min-height: 340px;
+  }
+}
+
+/* Card shells */
+.pokedex-calendar,
+.pokedex-upcoming{
+  width: 100%;
+  background: #ffffff;
+  border: 3px solid #e00022;             /* red frame */
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+
+/* Header strip */
+.pokedex-header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #e00022;                    /* pokedex red */
+  color: #fff;
+  border-bottom: 3px solid #b3001b;
+}
+
+.pokedex-dot{
+  width: 14px; height: 14px;
+  background: #00d6ff;                    /* blue accent */
+  border: 2px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px #111;
+}
+
+.pokedex-title{
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.pokedex-badge{
+  margin-left: auto;
+  background: #fff;
+  color: #e00022;
+  border: 2px solid #e00022;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* FullCalendar container */
+#calendar{
+  padding: 12px;
+}
+
+/* FullCalendar theme overrides */
+.fc .fc-toolbar-title{
+  font-weight: 900;
+  color: #111;
+}
+
+.fc .fc-button{
+  background: #fff;
+  border: 2px solid #e00022;
+  color: #e00022;
+  border-radius: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.fc .fc-button:hover{ filter: brightness(0.96); }
+.fc .fc-button-primary:not(:disabled).fc-button-active{
+  background: #e00022;
+  border-color: #e00022;
+  color: #fff;
+}
+
+.fc .fc-col-header-cell{
+  background: #fff6f6;                    /* faint pink */
+  border-bottom: 2px solid #e00022;
+}
+
+.fc .fc-col-header-cell-cushion{
+  color: #111;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.fc .fc-daygrid-day{
+  border: 1px solid rgba(224,0,34,0.35);  /* red grid lines */
+}
+
+.fc .fc-daygrid-day-number{
+  color: #111;
+  font-weight: 800;
+  padding: 6px;
+}
+
+/* Event pill look */
+.fc .fc-event{
+  border: 2px solid #e00022;
+  background: #e00022;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 6px;
+  box-shadow: 0 2px 0 #b3001b;
+}
+
+.fc .fc-event:hover{ filter: brightness(1.05); }
+
+/* Upcoming panel */
+.pokedex-upcoming-header{
+  padding: 12px 14px;
+  background: #fff6f6;
+  border-bottom: 2px solid #e00022;
+}
+
+.pokedex-upcoming-title{
+  font-weight: 900;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.upcoming-list{
+  padding: 12px 12px 14px;
+}
+
+.upcoming-item{
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 2px solid #e00022;
+  border-left: 10px solid #e00022;        /* red “pokedex” stripe */
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #b3001b;
+}
+
+.upcoming-item:hover{ transform: translateY(-1px); }
+.upcoming-item-title{ font-weight: 900; color: #111; }
+.upcoming-item-meta{ opacity: 0.85; font-weight: 700; color: #111; font-size: 0.9rem; }
+.upcoming-empty{ padding: 10px; font-weight: 800; color: #111; }
+
+/* Modal */
+.event-modal.hidden{ display: none; }
+.event-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.event-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.event-modal-card{
+  position: relative;
+  margin: 8vh auto;
+  max-width: 680px;
+  width: calc(100% - 24px);
+  background: #fff;
+  border: 3px solid #e00022;
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+
+.event-modal-close{
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: #fff;
+  border: 2px solid #e00022;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-weight: 900;
+  color: #e00022;
+  cursor: pointer;
+}
+
+.modal-title{
+  margin: 4px 0 10px;
+  color: #111;
+  font-weight: 1000;
+  letter-spacing: 0.2px;
+}
+
+.modal-meta{
+  border-top: 2px dashed rgba(224,0,34,0.35);
+  border-bottom: 2px dashed rgba(224,0,34,0.35);
+  padding: 10px 0;
+  margin-bottom: 12px;
+}
+
+.modal-row{
+  color: #111;
+  font-weight: 800;
+  margin: 4px 0;
+}
+
+.modal-desc{
+  color: #111;
+  white-space: pre-wrap;
+  font-weight: 700;
+}

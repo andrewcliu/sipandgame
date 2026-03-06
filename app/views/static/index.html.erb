@@ -1,5 +1,5 @@
-<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 
 <div id="content">
 
@@ -96,15 +96,43 @@
 
 	<br>
 
-	<div class='row'>
+	<div class='row event-calendar-row'>
 
-		<div class='col-md-6 col-sm-12'>
-			 	
-			<%= image_tag('VCSCardshow.jpg') %>
+		<div class='col-md-6 col-sm-12 d-flex'>
+			<div class="vcs-image-card">
+				<%= image_tag('VCSCardshow.jpg', class: 'vcs-image', alt: 'VCS card show') %>
+			</div>
 		</div>
-		<div class='col-md-6 col-sm-12' id="calendar">
-			
-		</div>
+		<div class="col-md-6 col-sm-12 d-flex">
+    <div class="pokedex-calendar">
+      <div class="pokedex-header">
+        <div class="pokedex-dot"></div>
+        <div class="pokedex-title">Event Calendar</div>
+        <div class="pokedex-badge">Sip &amp; Game</div>
+      </div>
+
+      <!-- IMPORTANT: keep this id for FullCalendar -->
+      <div id="calendar"></div>
+    </div>
+</div>
+
+<!-- Modal (can go right after the row, or near bottom of page) -->
+<div id="eventModal" class="event-modal hidden" aria-hidden="true">
+  <div class="event-modal-backdrop" data-close-modal="1"></div>
+
+  <div class="event-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="event-modal-close" data-close-modal="1" aria-label="Close">x</button>
+
+    <h2 id="modalTitle" class="modal-title"></h2>
+
+    <div class="modal-meta">
+      <div id="modalWhen" class="modal-row"></div>
+      <div id="modalWhere" class="modal-row"></div>
+    </div>
+
+    <div id="modalDesc" class="modal-desc"></div>
+  </div>
+</div>
 
 	</div>
 </div>
@@ -116,18 +144,77 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css">
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-
 <script>
+  function formatDateRange(start, end, allDay) {
+    const optsDate = { weekday: "short", month: "short", day: "numeric" };
+    const optsTime = { hour: "numeric", minute: "2-digit" };
+
+    if (!start) return "";
+    if (allDay) return start.toLocaleDateString(undefined, optsDate);
+
+    const startStr = `${start.toLocaleDateString(undefined, optsDate)} ${start.toLocaleTimeString(undefined, optsTime)}`;
+    if (!end) return startStr;
+
+    const sameDay = start.toDateString() === end.toDateString();
+    const endStr = sameDay
+      ? end.toLocaleTimeString(undefined, optsTime)
+      : `${end.toLocaleDateString(undefined, optsDate)} ${end.toLocaleTimeString(undefined, optsTime)}`;
+
+    return `${startStr} - ${endStr}`;
+  }
+
+  function openModal(event) {
+    const modal = document.getElementById("eventModal");
+    const titleEl = document.getElementById("modalTitle");
+    const whenEl = document.getElementById("modalWhen");
+    const whereEl = document.getElementById("modalWhere");
+    const descEl = document.getElementById("modalDesc");
+
+    titleEl.textContent = event.title || "(No title)";
+    whenEl.textContent = `When: ${formatDateRange(event.start, event.end, event.allDay)}`;
+
+    const loc = (event.extendedProps?.location || "").trim();
+    whereEl.textContent = loc ? `Where: ${loc}` : "Where: Not specified";
+
+    const desc = (event.extendedProps?.description || "").trim();
+    descEl.textContent = `Details: ${desc || "No description."}`;
+
+    modal.classList.remove("hidden");
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("eventModal");
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", (e) => {
+      if (e.target && e.target.dataset && e.target.dataset.closeModal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
     const calendarEl = document.getElementById("calendar");
-    if (!calendarEl) return;
+    if (!calendarEl || typeof FullCalendar === "undefined") return;
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: "dayGridMonth",
       height: "auto",
-      events: "/events_feed"
+      headerToolbar: {
+        left: "prev,next today",
+        center: "title",
+        right: "dayGridMonth,listMonth"
+      },
+      events: "/events_feed",
+      eventDisplay: "block",
+      eventClick: function (info) {
+        info.jsEvent.preventDefault();
+        openModal(info.event);
+      }
     });
 
     calendar.render();
