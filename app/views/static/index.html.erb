@@ -209,7 +209,12 @@
         center: "title",
         right: "dayGridMonth,listMonth"
       },
-      events: "/events_feed",
+      events: {
+        url: "/events_feed",
+        extraParams: function () {
+          return { refresh_at: Date.now() };
+        }
+      },
       eventDisplay: "block",
       eventClick: function (info) {
         info.jsEvent.preventDefault();
@@ -217,6 +222,20 @@
       }
     });
 
+    const refreshCalendar = function () {
+      calendar.refetchEvents();
+    };
+
     calendar.render();
+
+    const refreshInterval = window.setInterval(refreshCalendar, 60000);
+    window.addEventListener("focus", refreshCalendar);
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") refreshCalendar();
+    });
+    window.addEventListener("beforeunload", function () {
+      window.clearInterval(refreshInterval);
+    });
   });
 </script>
+
