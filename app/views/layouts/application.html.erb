@@ -72,11 +72,6 @@
               <li class="nav-item">
                 <%= link_to "HOME".html_safe, root_path, class: "nav-link #{'active' if current_page?(root_path)}", 'aria-current': ('page' if current_page?(root_path)) %>
               </li>
-              <% if params[:action] == 'index' %>
-              <li class="nav-item">
-                <a href="#calendar" class='nav-link'>CALENDAR</a>
-              </li>
-              <% end %>
               <li class="nav-item">
                 <%= link_to 'FOOD & BEVERAGE MENU', boba_tea_menu_path, class: "nav-link #{'active' if current_page?(boba_tea_menu_path)}" %>
               </li>
